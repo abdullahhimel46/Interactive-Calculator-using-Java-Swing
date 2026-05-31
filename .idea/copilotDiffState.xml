@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/build.gradle" />
+              <option name="originalContent" value="plugins {&#10;    id 'java'&#10;    id 'org.springframework.boot' version '4.0.6'&#10;    id 'io.spring.dependency-management' version '1.1.7'&#10;}&#10;&#10;group = 'com.abd'&#10;version = '0.0.1-SNAPSHOT'&#10;description = 'interactive-calculator'&#10;&#10;java {&#10;    toolchain {&#10;        languageVersion = JavaLanguageVersion.of(17)&#10;    }&#10;}&#10;&#10;repositories {&#10;    mavenCentral()&#10;}&#10;&#10;dependencies {&#10;    implementation 'org.springframework.boot:spring-boot-starter'&#10;    testImplementation 'org.springframework.boot:spring-boot-starter-test'&#10;    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'&#10;}&#10;&#10;tasks.named('test') {&#10;    useJUnitPlatform()&#10;}&#10;" />
+              <option name="updatedContent" value="plugins {&#10;    id 'java'&#10;    id 'application'&#10;    id 'org.springframework.boot' version '4.0.6'&#10;    id 'io.spring.dependency-management' version '1.1.7'&#10;}&#10;&#10;group = 'com.abd'&#10;version = '0.0.1-SNAPSHOT'&#10;description = 'interactive-calculator'&#10;&#10;java {&#10;    toolchain {&#10;        languageVersion = JavaLanguageVersion.of(17)&#10;    }&#10;}&#10;&#10;application {&#10;    // Desktop entrypoint (Swing/JOptionPane). This lets you run the app without Spring.&#10;    mainClass = 'com.abd.interactivecalculator.model.Calculator'&#10;}&#10;&#10;// Produce a runnable plain jar for the desktop entrypoint (no Spring Boot needed).&#10;tasks.named('jar') {&#10;    manifest {&#10;        attributes('Main-Class': application.mainClass.get())&#10;    }&#10;}&#10;&#10;repositories {&#10;    mavenCentral()&#10;}&#10;&#10;dependencies {&#10;    implementation 'org.springframework.boot:spring-boot-starter'&#10;&#10;    // Optional compile-time annotations/metadata (improves IDE support; no runtime impact).&#10;    compileOnly 'org.jspecify:jspecify:1.0.0'&#10;    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'&#10;&#10;    testImplementation 'org.springframework.boot:spring-boot-starter-test'&#10;    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'&#10;}&#10;&#10;tasks.named('test') {&#10;    useJUnitPlatform()&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/abd/interactivecalculator/InteractiveCalculatorApplication.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/abd/interactivecalculator/InteractiveCalculatorApplication.java" />
+              <option name="originalContent" value="package com.abd.interactivecalculator;&#10;&#10;import org.springframework.boot.SpringApplication;&#10;import org.springframework.boot.autoconfigure.SpringBootApplication;&#10;&#10;@SpringBootApplication&#10;public class InteractiveCalculatorApplication {&#10;&#10;    public static void main(String[] args) {&#10;        SpringApplication.run(InteractiveCalculatorApplication.class, args);&#10;    }&#10;&#10;}&#10;" />
+              <option name="updatedContent" value="package com.abd.interactivecalculator;&#10;&#10;import org.springframework.boot.builder.SpringApplicationBuilder;&#10;import org.springframework.boot.autoconfigure.SpringBootApplication;&#10;&#10;@SpringBootApplication&#10;public class InteractiveCalculatorApplication {&#10;&#10;    public static void main(String[] args) {&#10;        // Swing/JOptionPane requires non-headless mode.&#10;        new SpringApplicationBuilder(InteractiveCalculatorApplication.class)&#10;                .headless(false)&#10;                .run(args);&#10;    }&#10;&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/abd/interactivecalculator/StartupRunner.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/abd/interactivecalculator/StartupRunner.java" />
+              <option name="updatedContent" value="package com.abd.interactivecalculator;&#10;&#10;import com.abd.interactivecalculator.model.Calculator;&#10;import com.abd.interactivecalculator.config.CalculatorStartupProperties;&#10;import org.jspecify.annotations.NullMarked;&#10;import org.springframework.boot.CommandLineRunner;&#10;import org.springframework.context.annotation.Profile;&#10;import org.springframework.stereotype.Component;&#10;&#10;/**&#10; * Starts the interactive calculator dialogs when the Spring Boot app starts.&#10; *&#10; * &lt;p&gt;Enabled by default. Disable via: {@code calculator.startup.enabled=false}&#10; * (useful for tests).&#10; */&#10;@Component&#10;@Profile(&quot;!test&quot;)&#10;@NullMarked&#10;public class StartupRunner implements CommandLineRunner {&#10;&#10;    private final CalculatorStartupProperties properties;&#10;&#10;    public StartupRunner(CalculatorStartupProperties properties) {&#10;        this.properties = properties;&#10;    }&#10;&#10;    @Override&#10;    public void run(String... args) {&#10;        if (!properties.isEnabled()) {&#10;            return;&#10;        }&#10;        // Delegate to the existing Calculator main method which shows JOptionPane dialogs.&#10;        Calculator.main(args);&#10;    }&#10;}&#10;&#10;&#10;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/abd/interactivecalculator/config/CalculatorStartupProperties.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/abd/interactivecalculator/config/CalculatorStartupProperties.java" />
+              <option name="updatedContent" value="package com.abd.interactivecalculator.config;&#10;&#10;import org.springframework.boot.context.properties.ConfigurationProperties;&#10;import org.springframework.stereotype.Component;&#10;&#10;/**&#10; * Configuration for the interactive startup behavior.&#10; */&#10;@Component&#10;@ConfigurationProperties(prefix = &quot;calculator.startup&quot;)&#10;public class CalculatorStartupProperties {&#10;&#10;    /**&#10;     * Whether to start the interactive calculator UI on application startup.&#10;     */&#10;    private boolean enabled = true;&#10;&#10;    public boolean isEnabled() {&#10;        return enabled;&#10;    }&#10;&#10;    public void setEnabled(boolean enabled) {&#10;        this.enabled = enabled;&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/application.yaml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/resources/application.yaml" />
+              <option name="originalContent" value="spring:&#10;  application:&#10;    name: interactive-calculator&#10;" />
+              <option name="updatedContent" value="spring:&#10;  application:&#10;    name: interactive-calculator&#10;  main:&#10;    headless: false&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/com/abd/interactivecalculator/InteractiveCalculatorApplicationTests.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/test/java/com/abd/interactivecalculator/InteractiveCalculatorApplicationTests.java" />
+              <option name="originalContent" value="package com.abd.interactivecalculator;&#10;&#10;import org.junit.jupiter.api.Test;&#10;import org.springframework.boot.test.context.SpringBootTest;&#10;&#10;@SpringBootTest&#10;class InteractiveCalculatorApplicationTests {&#10;&#10;    @Test&#10;    void contextLoads() {&#10;    }&#10;&#10;}&#10;" />
+              <option name="updatedContent" value="package com.abd.interactivecalculator;&#10;&#10;import org.junit.jupiter.api.Test;&#10;import org.springframework.boot.test.context.SpringBootTest;&#10;import org.springframework.test.context.ActiveProfiles;&#10;&#10;@SpringBootTest&#10;@ActiveProfiles(&quot;test&quot;)&#10;class InteractiveCalculatorApplicationTests {&#10;&#10;    @Test&#10;    void contextLoads() {&#10;    }&#10;&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
