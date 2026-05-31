@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd86a745-242d-438c-b00c-b4bb9a4085ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abd/model/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/5.png" afterDir="false" />
+    <list default="true" id="fd86a745-242d-438c-b00c-b4bb9a4085ef" name="Changes" comment="Add interactive calculator application with Spring Boot and Java Swing">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +63,26 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "abdullahhimel46"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/abdullahhimel46/Interactive-Calculator-using-Java-Swing.git",
+    "accountId": "2d8e4540-ef17-4a64-a7a4-e57f1bef9fdd"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
 }]]></component>
@@ -109,10 +111,11 @@
     "Gradle.interactive-calculator [:com.abd.model.Calculator.main()].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Coding/Java/Codes/interactive-calculator/src/main/resources",
     "nodejs_package_manager_path": "npm",
@@ -135,12 +138,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780196259127</updated>
-      <workItem from="1780196264296" duration="869000" />
+      <workItem from="1780196264296" duration="1381000" />
     </task>
+    <task id="LOCAL-00001" summary="Add interactive calculator application with Spring Boot and Java Swing">
+      <option name="closed" value="true" />
+      <created>1780197150093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780197150094</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add interactive calculator application with Spring Boot and Java Swing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add interactive calculator application with Spring Boot and Java Swing" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
